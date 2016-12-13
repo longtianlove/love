@@ -1,1 +1,1 @@
-include ':app', ':bottomlib', ':im', ':map'
+include ':app', ':frameworklib', ':im', ':map'

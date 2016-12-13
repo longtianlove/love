@@ -20,4 +20,20 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+
+    <!--灰色的线-->
+    <style name="line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#CCCCCC</item>
+    </style>
+
+    <!--注册统一编辑框-->
+    <style name="edittext_common_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 </resources>
