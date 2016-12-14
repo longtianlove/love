@@ -13,8 +13,13 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+            zipAlignEnabled false
         }
     }
 }
@@ -29,9 +34,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':frameworklib')
 
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'org.ligboy.retrofit2:converter-fastjson:2.1.0'
-    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+
 }

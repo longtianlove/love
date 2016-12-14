@@ -2,7 +2,10 @@ package longtianlove.myapplication.login.presenter;
 
 import android.widget.Toast;
 
+import longtianlove.bottomlib.network.NetWorkCallBack;
 import longtianlove.bottomlib.util.EncodeUtil;
+import longtianlove.bottomlib.util.ToastUtil;
+import longtianlove.myapplication.Constants;
 import longtianlove.myapplication.LongApplication;
 import longtianlove.myapplication.bussiness.ApiUtils;
 import longtianlove.myapplication.login.ConstantsLogin;
@@ -23,17 +26,21 @@ public class LoginPresenter {
         mloginView = loginView;
     }
     public void userLogin(String mobile,String pwd){
+        ToastUtil.showShortToastInOtherThread(LongApplication.mcontext,"");
+
         String mobileEncode= EncodeUtil.encodeDes(mobile);
         String pwdEncode=EncodeUtil.encodeDes(pwd);
-        ApiUtils.getPassportApiservice().userLogin(mobileEncode,pwdEncode, ConstantsLogin.JOBSOURCE+"").enqueue(new Callback<BaseUserBean>() {
+        ApiUtils.getPassportApiservice().userLogin(mobileEncode,pwdEncode, ConstantsLogin.JOBSOURCE+"").enqueue(new NetWorkCallBack<BaseUserBean>() {
             @Override
-            public void onResponse(Call<BaseUserBean> call, Response<BaseUserBean> response) {
-                Toast.makeText(LongApplication.mcontext,"成功",Toast.LENGTH_LONG).show();
+            public void onSuccess(Response<BaseUserBean> response, BaseUserBean netBody) {
+                if(netBody.code== Constants.CODE_OK){
+                    ToastUtil.showShortToastSafe(LongApplication.mcontext,netBody.msg);
+                }
             }
 
             @Override
-            public void onFailure(Call<BaseUserBean> call, Throwable t) {
-                Toast.makeText(LongApplication.mcontext,"失败",Toast.LENGTH_LONG).show();
+            public void onFail(Call<BaseUserBean> call, Throwable t) {
+                ToastUtil.showShortToastSafe(LongApplication.mcontext,"网络失败");
             }
         });
     }

@@ -16,4 +16,10 @@ public class Constants {
      * 接口需要的扩展字段
      */
     public static String API_EXTION = "";
+
+
+    /**
+     * 网络接口返回数据正常
+     */
+    public static int CODE_OK=0;
 }

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.concurrent.TimeUnit;
 
+import longtianlove.bottomlib.network.HttpSwitch;
 import longtianlove.bottomlib.util.AppUtil;
 import longtianlove.bottomlib.util.DevicesUtil;
 import longtianlove.myapplication.Constants;
@@ -96,6 +97,7 @@ public class ApiUtils {
                 .retryOnConnectionFailure(true)//重试机制
                 .addInterceptor(headerInterceptor)//请求拦截器
                 .addInterceptor(loggingInterceptor);//Log拦截器
+        HttpSwitch.toOffline(httpBuilder);
         httpClient = httpBuilder.build();
         retrofit = new Retrofit.Builder()
                 .baseUrl(HOST)

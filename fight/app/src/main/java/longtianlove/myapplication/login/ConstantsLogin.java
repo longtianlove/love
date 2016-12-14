@@ -5,6 +5,10 @@ package longtianlove.myapplication.login;
  */
 
 public class ConstantsLogin {
+
+
+
+
     public static final String C_COOKIE = "PPS=";//C端的cookie名字
     public static final String B_COOKIE = "bps=";//B端的cookie名字
 
