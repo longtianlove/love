@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/frameworklib" />
             <option value="$PROJECT_DIR$/im" />
             <option value="$PROJECT_DIR$/map" />
+            <option value="$PROJECT_DIR$/qrcode" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

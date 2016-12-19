@@ -26,8 +26,6 @@ public class LoginPresenter {
         mloginView = loginView;
     }
     public void userLogin(String mobile,String pwd){
-        ToastUtil.showShortToastInOtherThread(LongApplication.mcontext,"");
-
         String mobileEncode= EncodeUtil.encodeDes(mobile);
         String pwdEncode=EncodeUtil.encodeDes(pwd);
         ApiUtils.getPassportApiservice().userLogin(mobileEncode,pwdEncode, ConstantsLogin.JOBSOURCE+"").enqueue(new NetWorkCallBack<BaseUserBean>() {
@@ -35,6 +33,7 @@ public class LoginPresenter {
             public void onSuccess(Response<BaseUserBean> response, BaseUserBean netBody) {
                 if(netBody.code== Constants.CODE_OK){
                     ToastUtil.showShortToastSafe(LongApplication.mcontext,netBody.msg);
+
                 }
             }
 

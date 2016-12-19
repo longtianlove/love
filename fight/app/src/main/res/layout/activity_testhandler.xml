@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/tv_show"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:text="handler之前"
+    android:gravity="center"
+    android:textSize="24sp"
+    />
+    <Button
+        android:id="@+id/bt_go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="触发"
+        android:gravity="center"
+        android:textSize="24sp"
+        />
+</LinearLayout>
