@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
+import longtianlove.qrcode.R;
 
 /**
  * Created by 58 on 2016/12/19.
@@ -67,43 +68,43 @@ public class QRCodeAcitivity extends Activity implements QRCodeView.Delegate {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.start_spot:
-                mQRCodeView.startSpot();
-                break;
-            case R.id.stop_spot:
-                mQRCodeView.stopSpot();
-                break;
-            case R.id.start_spot_showrect:
-                mQRCodeView.startSpotAndShowRect();
-                break;
-            case R.id.stop_spot_hiddenrect:
-                mQRCodeView.stopSpotAndHiddenRect();
-                break;
-            case R.id.show_rect:
-                mQRCodeView.showScanRect();
-                break;
-            case R.id.hidden_rect:
-                mQRCodeView.hiddenScanRect();
-                break;
-            case R.id.start_preview:
-                mQRCodeView.startCamera();
-                break;
-            case R.id.stop_preview:
-                mQRCodeView.stopCamera();
-                break;
-            case R.id.open_flashlight:
-                mQRCodeView.openFlashlight();
-                break;
-            case R.id.close_flashlight:
-                mQRCodeView.closeFlashlight();
-                break;
-            case R.id.scan_barcode:
-                mQRCodeView.changeToScanBarcodeStyle();
-                break;
-            case R.id.scan_qrcode:
-                mQRCodeView.changeToScanQRCodeStyle();
-                break;
+//        switch (v.getId()) {
+//            case R.id.start_spot:
+//                mQRCodeView.startSpot();
+//                break;
+//            case R.id.stop_spot:
+//                mQRCodeView.stopSpot();
+//                break;
+//            case R.id.start_spot_showrect:
+//                mQRCodeView.startSpotAndShowRect();
+//                break;
+//            case R.id.stop_spot_hiddenrect:
+//                mQRCodeView.stopSpotAndHiddenRect();
+//                break;
+//            case R.id.show_rect:
+//                mQRCodeView.showScanRect();
+//                break;
+//            case R.id.hidden_rect:
+//                mQRCodeView.hiddenScanRect();
+//                break;
+//            case R.id.start_preview:
+//                mQRCodeView.startCamera();
+//                break;
+//            case R.id.stop_preview:
+//                mQRCodeView.stopCamera();
+//                break;
+//            case R.id.open_flashlight:
+//                mQRCodeView.openFlashlight();
+//                break;
+//            case R.id.close_flashlight:
+//                mQRCodeView.closeFlashlight();
+//                break;
+//            case R.id.scan_barcode:
+//                mQRCodeView.changeToScanBarcodeStyle();
+//                break;
+//            case R.id.scan_qrcode:
+//                mQRCodeView.changeToScanQRCodeStyle();
+//                break;
 //            case R.id.choose_qrcde_from_gallery:
 //                /*
 //                从相册选取二维码图片，这里为了方便演示，使用的是
@@ -112,7 +113,7 @@ public class QRCodeAcitivity extends Activity implements QRCodeView.Delegate {
 //                 */
 //                startActivityForResult(BGAPhotoPickerActivity.newIntent(this, null, 1, null, false), REQUEST_CODE_CHOOSE_QRCODE_FROM_GALLERY);
 //                break;
-        }
+//        }
     }
 
 //    @Override

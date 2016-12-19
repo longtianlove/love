@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.List;
 
 import longtianlove.myapplication.test.TestHandlerActivity;
-import longtianlove.qrcode.TestQRCodeAcitivity;
+import longtianlove.qrcode.QRCodeAcitivity;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -73,7 +73,7 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
                 startActivity(intent);
                 break;
             case R.id.qrcode:
-                intent.setClass(TestActivity.this, TestQRCodeAcitivity.class);
+                intent.setClass(TestActivity.this, QRCodeAcitivity.class);
                 startActivity(intent);
         }
     }

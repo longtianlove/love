@@ -33,7 +33,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'pub.devrel:easypermissions:0.1.7'
-
     testCompile 'junit:junit:4.12'
     compile project(':frameworklib')
+    compile project(':qrcode')
 }
