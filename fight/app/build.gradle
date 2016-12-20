@@ -1,7 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+
+
+        compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
     buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
@@ -27,13 +35,13 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    compile(name:'qrcode-release', ext:'aar')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     compile 'pub.devrel:easypermissions:0.1.7'
     testCompile 'junit:junit:4.12'
     compile project(':frameworklib')
-    compile project(':qrcode')
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.5@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.5@aar'
 }
