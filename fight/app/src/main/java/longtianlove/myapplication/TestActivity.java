@@ -9,6 +9,7 @@ import android.view.View;
 import java.util.List;
 
 import longtianlove.myapplication.test.TestHandlerActivity;
+import longtianlove.myapplication.test.TestTinkerActivity;
 import longtianlove.qrcode.QRCodeAcitivity;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -17,11 +18,13 @@ import pub.devrel.easypermissions.EasyPermissions;
  * Created by 58 on 2016/12/15.
  */
 
-public class TestActivity  extends Activity implements View.OnClickListener,EasyPermissions.PermissionCallbacks{
+public class TestActivity extends Activity implements View.OnClickListener, EasyPermissions.PermissionCallbacks {
     private static final int REQUEST_CODE_QRCODE_PERMISSIONS = 1;
 
     View handler_text;
     View qrcode;
+    View tinker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +32,17 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
         initView();
         initListener();
     }
-    void initView(){
-        handler_text=this.findViewById(R.id.handler_text);
-        qrcode=this.findViewById(R.id.qrcode);
+
+    void initView() {
+        handler_text = this.findViewById(R.id.handler_text);
+        qrcode = this.findViewById(R.id.qrcode);
+        tinker = this.findViewById(R.id.tinker);
     }
-    void initListener(){
+
+    void initListener() {
         handler_text.setOnClickListener(this);
         qrcode.setOnClickListener(this);
+        tinker.setOnClickListener(this);
     }
 
     @Override
@@ -44,6 +51,7 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
         requestCodeQrcodePermissions();
 
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
@@ -64,16 +72,21 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
             EasyPermissions.requestPermissions(this, "扫描二维码需要打开相机和散光灯的权限", REQUEST_CODE_QRCODE_PERMISSIONS, perms);
         }
     }
+
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent();
-        switch (v.getId()){
+        Intent intent = new Intent();
+        switch (v.getId()) {
             case R.id.handler_text:
                 intent.setClass(TestActivity.this, TestHandlerActivity.class);
                 startActivity(intent);
                 break;
             case R.id.qrcode:
                 intent.setClass(TestActivity.this, QRCodeAcitivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tinker:
+                intent.setClass(TestActivity.this, TestTinkerActivity.class);
                 startActivity(intent);
         }
     }
