@@ -1,1 +1,1 @@
-include ':app', ':frameworklib', ':im', ':map', ':qrcode'
+include ':app', ':frameworklib', ':im', ':map', ':qrcode', ':containerbus'

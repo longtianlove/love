@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/containerbus/containerbus.iml" filepath="$PROJECT_DIR$/containerbus/containerbus.iml" />
       <module fileurl="file://$PROJECT_DIR$/fight.iml" filepath="$PROJECT_DIR$/fight.iml" />
       <module fileurl="file://$PROJECT_DIR$/frameworklib/frameworklib.iml" filepath="$PROJECT_DIR$/frameworklib/frameworklib.iml" />
       <module fileurl="file://$PROJECT_DIR$/im/im.iml" filepath="$PROJECT_DIR$/im/im.iml" />
