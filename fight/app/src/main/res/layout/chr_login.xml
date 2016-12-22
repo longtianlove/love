@@ -232,16 +232,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp">
 
-                    <longtianlove.myapplication.util.widget.TextAnimationLayout
-                        android:id="@+id/login_quickmobile_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:paddingLeft="12dp"
-                        >
+                    <!--<longtianlove.myapplication.util.widget.TextAnimationLayout-->
+                        <!--android:id="@+id/login_quickmobile_layout"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:paddingTop="16dp"-->
+                        <!--android:paddingBottom="16dp"-->
+                        <!--android:paddingLeft="12dp"-->
+                        <!--&gt;-->
 
-                        <EditText
+                        <longtianlove.myapplication.util.widget.SelfEditText
                             android:id="@+id/login_quickmobile_ed"
                             style="@style/edittext_common_style"
                             android:layout_toLeftOf="@+id/login_quickmobiledel_btn"
@@ -261,7 +261,7 @@
                             android:layout_centerVertical="true"
                             android:padding="12dp"
                             />
-                    </longtianlove.myapplication.util.widget.TextAnimationLayout>
+                    <!--</longtianlove.myapplication.util.widget.TextAnimationLayout>-->
                 </RelativeLayout>
 
                 <View style="@style/line_style" />
@@ -296,16 +296,16 @@
                     android:layout_toLeftOf="@id/login_quickmsg_tv"
                     android:layout_height="56dp">
 
-                    <longtianlove.myapplication.util.widget.TextAnimationLayout
-                        android:id="@+id/login_quickpassword_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="16dp"
-                        android:paddingLeft="12dp"
-                        >
+                    <!--<longtianlove.myapplication.util.widget.TextAnimationLayout-->
+                        <!--android:id="@+id/login_quickpassword_layout"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:paddingTop="16dp"-->
+                        <!--android:paddingBottom="16dp"-->
+                        <!--android:paddingLeft="12dp"-->
+                        <!--&gt;-->
 
-                        <EditText
+                        <longtianlove.myapplication.util.widget.SelfEditText
                             android:id="@+id/login_quickpassword_ed"
                             style="@style/edittext_common_style"
                             android:layout_toLeftOf="@+id/login_quickmsgcodedel_btn"
@@ -326,7 +326,7 @@
                             android:padding="12dp"
                             />
 
-                        </longtianlove.myapplication.util.widget.TextAnimationLayout>
+                        <!--</longtianlove.myapplication.util.widget.TextAnimationLayout>-->
                     </RelativeLayout>
                 </RelativeLayout>
 

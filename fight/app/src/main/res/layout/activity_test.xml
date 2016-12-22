@@ -28,4 +28,30 @@
             />
 
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="登录"
+            android:gravity="center"
+            android:textSize="24sp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/loadclass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="所有的类"
+            android:gravity="center"
+            android:textSize="24sp"
+            />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
  */
 
 public class EventBus {
+    static
     public void register(Object subsciber) {
         //从subscriber获取以onEvent开头的method
         Class subscriberClass = subsciber.getClass();
@@ -15,8 +16,8 @@ public class EventBus {
 
         }
     }
-    subscribe(Object ){
-
-    }
+//    subscribe(Object ){
+//
+//    }
 
 }

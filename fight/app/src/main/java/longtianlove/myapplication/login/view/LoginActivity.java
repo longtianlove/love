@@ -20,10 +20,14 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import longtianlove.bottomlib.base.BaseActivity;
+import longtianlove.bottomlib.util.ToastUtil;
+import longtianlove.myapplication.LongApplication;
 import longtianlove.myapplication.R;
 import longtianlove.myapplication.login.presenter.LoginPresenter;
+import longtianlove.myapplication.util.widget.SelfEditText;
 import longtianlove.myapplication.util.widget.TextAnimationLayout;
 
 /**
@@ -49,8 +53,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
      * 快捷登录
      ******/
     private View login_quicklogin_container;
-    private EditText login_quickmobile_ed;
-    private EditText login_quickpassword_ed;
+    private longtianlove.myapplication.util.widget.SelfEditText login_quickmobile_ed;
+    private longtianlove.myapplication.util.widget.SelfEditText login_quickpassword_ed;
     private TextView login_quickmsg_tv;
     /**********
      * 第三方登录container
@@ -100,12 +104,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         login_accountselect_view = findViewById(R.id.login_accountselect_view);
         login_accountlogin_container = findViewById(R.id.login_input_container);
         login_quicklogin_container = findViewById(R.id.login_quicklogin_container);
-        ((TextAnimationLayout) findViewById(R.id.login_quickmobile_layout)).setDelView(R.id.login_quickmobiledel_btn);
+//        ((TextAnimationLayout) findViewById(R.id.login_quickmobile_layout)).setDelView(R.id.login_quickmobiledel_btn);
         findViewById(R.id.login_quickmobiledel_btn).setOnClickListener(this);
-        login_quickmobile_ed = (EditText) findViewById(R.id.login_quickmobile_ed);
-        ((TextAnimationLayout) findViewById(R.id.login_quickpassword_layout)).setDelView(R.id.login_quickmsgcodedel_btn);
+        login_quickmobile_ed = (SelfEditText) findViewById(R.id.login_quickmobile_ed);
+//        ((TextAnimationLayout) findViewById(R.id.login_quickpassword_layout)).setDelView(R.id.login_quickmsgcodedel_btn);
         findViewById(R.id.login_quickmsgcodedel_btn).setOnClickListener(this);
-        login_quickpassword_ed = (EditText) findViewById(R.id.login_quickpassword_ed);
+        login_quickpassword_ed = (SelfEditText) findViewById(R.id.login_quickpassword_ed);
         login_quickmsg_tv = (TextView) findViewById(R.id.login_quickmsg_tv);
 
 
@@ -199,6 +203,28 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 return false;
             }
         });
+
+
+//        login_quickmobile_ed.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                ToastUtil.showShortToastSafe(LongApplication.mcontext,"获取焦点");
+//            }
+//        });
+//        login_quickmobile_ed.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+////                    quickLogin();
+//                    InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+//                    if (imm.isActive()) {
+//                        imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
+//                    }
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
     }
     private void initData(Bundle savedInstanceState) {
         login_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -284,6 +310,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 //                        finish();
 //                    }
 //                });
+                ToastUtil.showShortToastSafe(LongApplication.mcontext,"切换身份");
                 break;
             case R.id.login_username_del: {
                 login_username.setText("");
@@ -359,5 +386,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     public void NetworkError() {
 
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (processKey(event, 0 != event.getRepeatCount())) return true;
+        ToastUtil.showShortToastSafe(LongApplication.mcontext,"土司down");
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+//        if (processKey(event, true)) return true;
+        ToastUtil.showShortToastSafe(LongApplication.mcontext,"土司up");
+        return super.onKeyUp(keyCode, event);
     }
 }

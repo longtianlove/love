@@ -8,6 +8,8 @@ import android.view.View;
 
 import java.util.List;
 
+import longtianlove.myapplication.login.view.LoginActivity;
+import longtianlove.myapplication.test.LoadClassActivity;
 import longtianlove.myapplication.test.TestHandlerActivity;
 import longtianlove.qrcode.QRCodeAcitivity;
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -22,6 +24,8 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
 
     View handler_text;
     View qrcode;
+    View login;
+    View loadclass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +36,14 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
     void initView(){
         handler_text=this.findViewById(R.id.handler_text);
         qrcode=this.findViewById(R.id.qrcode);
+        login=this.findViewById(R.id.login);
+        loadclass=this.findViewById(R.id.loadclass);
     }
     void initListener(){
         handler_text.setOnClickListener(this);
         qrcode.setOnClickListener(this);
+        login.setOnClickListener(this);
+        loadclass.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +83,15 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
             case R.id.qrcode:
                 intent.setClass(TestActivity.this, QRCodeAcitivity.class);
                 startActivity(intent);
+                break;
+            case R.id.login:
+                intent.setClass(TestActivity.this, LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.loadclass:
+                intent.setClass(TestActivity.this, LoadClassActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }
