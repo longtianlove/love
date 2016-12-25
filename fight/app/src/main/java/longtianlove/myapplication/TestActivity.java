@@ -9,6 +9,7 @@ import android.view.View;
 import java.util.List;
 
 import longtianlove.myapplication.login.view.LoginActivity;
+import longtianlove.myapplication.test.CustomerViewActivity;
 import longtianlove.myapplication.test.LoadClassActivity;
 import longtianlove.myapplication.test.TestHandlerActivity;
 import longtianlove.qrcode.QRCodeAcitivity;
@@ -26,6 +27,7 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
     View qrcode;
     View login;
     View loadclass;
+    View customer_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +40,14 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
         qrcode=this.findViewById(R.id.qrcode);
         login=this.findViewById(R.id.login);
         loadclass=this.findViewById(R.id.loadclass);
+        customer_view=this.findViewById(R.id.customer_view);
     }
     void initListener(){
         handler_text.setOnClickListener(this);
         qrcode.setOnClickListener(this);
         login.setOnClickListener(this);
         loadclass.setOnClickListener(this);
+        customer_view.setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +94,10 @@ public class TestActivity  extends Activity implements View.OnClickListener,Easy
                 break;
             case R.id.loadclass:
                 intent.setClass(TestActivity.this, LoadClassActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.customer_view:
+                intent.setClass(TestActivity.this, CustomerViewActivity.class);
                 startActivity(intent);
                 break;
         }
